@@ -1,0 +1,8 @@
+$def with (myfile)
+
+<h1>This is your uploaded picture</h1>
+
+$if myfile:
+    Here it is <img src="/static/$myfile" alt="ups, I did it again!" width="50%" height="50%"/>
+$else:
+    <em>Something go wrong!<em>

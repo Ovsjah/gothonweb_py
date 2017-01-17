@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gothons From Planet Percal #25</title>
+<style>
+h2 {
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th; td {    
+    text-align: left;
+}
+th {
+    width: 175px;
+}
+caption {
+    padding: 5px;
+}
+</style>
+</head>
+<body>
+<h2>Your quest bigins here!</h2>
+<form action="/game" method="POST">
+    <table align="center">
+        <caption>Registration</caption>
+        <tr>
+            <th>Nickname:</th>
+            <td>
+                <input type="text" name="name" placeholder="type your nick">
+            </td>
+        </tr>
+        <tr>
+            <th rowspan="3">Password:</th>
+            <td>
+                <input type="password" name="password" placeholder="create a password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password" name="password" placeholder="repeat your password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" style="width:173px;">
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

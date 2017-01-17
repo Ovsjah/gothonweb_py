@@ -1,0 +1,8 @@
+<header>
+<b>Heil stranger!<p>
+</header>
+
+<section>
+<form action='/' method="POST">
+    <input type="text" name="name" placeholder="type your nickname">
+    <input type="password" name="password" placeholder="create a password"> 

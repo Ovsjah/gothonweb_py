@@ -1,0 +1,96 @@
+$def with (room, user)
+$if room.name == "Central Corridor":
+    <style>
+        body {
+            border-style: dotted dashed solid double;
+            height: 429px;
+        }
+    </style>
+$elif room.name == "The Bridge":
+    <style>
+        body {
+            border-style: dotted dashed solid double;
+            height: 429px;
+        }
+    </style> 
+$elif room.name == "death":
+    <style>
+        body {
+            border-style: dotted dashed solid double;
+            height: 222px;
+        }
+    </style>
+$elif room.name == "The End":
+    <style>
+        body {
+            border-style: dotted dashed solid double;
+            height: 327px;
+        }
+    </style>
+$elif room.name == "Laser Weapon Armory":
+    <style>
+        body {
+            border-style: dotted dashed solid double;
+            height: 484px;
+        }
+    </style>
+$elif room.name == "Escape Pod":
+    <style>
+        body {
+            border-style: dotted dashed solid double;
+            height: 482px;
+        }
+    </style>
+<header>
+<h1 id="header"> $room.name </h1>
+<p id="logged">You are logged in as: <b>$user</b> <button type="button"><a href="/logout" style="text-decoration:none">Logout</a></button></p>
+</header>
+
+<section>
+<pre>
+$room.description
+</pre>
+</section>
+
+<footer>
+$if room.name == "Central Corridor":
+    <p>
+    <form action="/game" method="POST">
+        action <input type="text" name="action"> <input type="SUBMIT">
+    </form>
+    <button onclick="alert('You can tell a joke or try to dodge or even shoot them to death')">Help!</button>
+    </p>
+$elif room.name == "The Bridge":
+    <p>
+    <form action="/game" method="POST">
+        action <input type="text" name="action"> <input type="SUBMIT">
+    </form>
+    <button onclick="alert('You can throw the bomb or just slowly place the bomb like gay')">Help!</button>
+    </p>
+$elif room.name == "death" or room.name == "The End":
+    <p><a href="/index">Play Again?</a></p>
+$elif room.name == "Laser Weapon Armory" and room.guesses > 1:
+    <p>$room.guesses guesses remain</p>
+    <p>
+    <form action="/game" method="POST">
+        action <input type="text" name="action" maxlength="3" placeholder="type the code"> <input type="SUBMIT">
+    </form>
+    </p>
+$elif room.name == "Laser Weapon Armory" and room.guesses == 1:
+    <p>$room.guesses guess remains</p>
+    <p>
+    <form action="/game" method="POST">
+        action <input type="text" name="action" maxlenght="3" placeholder="type the code"> <input type="SUBMIT">
+    </form>
+    </p>
+$elif room.name == "Escape Pod":
+    <form action="/game" method="POST">
+        action <input type="number" name="action" min="1" max="5"> <input type="SUBMIT"><br><br>  
+$else:
+    <p>
+    <form action="/game" method="POST">
+        action <input type="text" name="action"> <input type="SUBMIT">
+    </form>
+    </p>
+<em>Made by Ovsjah inspired by LPTHW<em>
+</footer>  
